@@ -283,9 +283,10 @@ void listScreens() {
 
         printf("Resolutions for rotation %i:\n", (int) CGDisplayRotation(curScreen));
         for (int i = 0; i < modeCount; i++) {
+            printf("id:%i ", curScreen);
             modes_D4 mode = modes[i];
 
-            printf("  mode %i: res:%dx%d", i, mode.derived.width, mode.derived.height);
+            printf("  mode:%i res:%dx%d", i, mode.derived.width, mode.derived.height);
 
             if (mode.derived.freq) {
                 printf(" hz:%i", mode.derived.freq);
